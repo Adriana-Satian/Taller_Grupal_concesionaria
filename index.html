@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="layout">
+     <fieldset>
+        <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div>
+            <div class="sidebar-header">   
+                <div class="logo">🚗</div>
+                <h2>Mis Vehículos</h2>
+                <p>Organiza tu concesionario</p>
+            </div>
+            <nav class="menu">
+                <button class="activo">📋 Todos</button>
+                <button>🕒 Disponibles</button>
+                <button>✅ Vendidos</button>
+                <button>📅 Calendario</button>
+                <button>📊 Estadísticas</button>
+                <button>⚙ Ajustes</button>
+            </nav>
+        </div>
+        <div class="frase">
+            “La disciplina es el puente entre las metas y los logros.”
+        </div>
+    </aside>
+</fieldset>
+
+
+    <main class="contenido">
+              
+        <div class="container">
+        <h1>Concesionario de Autos</h1>
+        <p>Gestión de vehículos</p>
+    </div>
+</header>
+            <section class="card">
+                <h2>Agregar nuevo vehículo</h2>
+                <div class="form">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input type="text" id="auto" placeholder="Ej: Toyota Corolla">
+                    </div>
+                    <div class="campo">
+                        <label>Prioridad</label>
+                        <select id="prioridad">
+                            <option value="">Seleccione</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                    
+                    <div class="campo">
+                        <label>Fecha</label>
+                        <input type="date" id="fecha">
+                    </div>
+                    <button onclick="agregarAuto()">+ Agregar</button>
+                </div>
+            </section>
+        <section class="card filtros">
+                <div class="nombresss">
+                    <button onclick="filtrar('todos')">Todos</button>
+                    <button onclick="filtrar('disponible')">Disponibles</button>
+                    <button onclick="filtrar('vendido')">Vendidos</button>
+                </div>
+                <div class="contador">
+                    <span>Total: <b id="total">0</b></span>
+                    <span>Disponibles: <b id="disponibles">0</b></span>
+                    <span>Vendidos: <b id="vendidos">0</b></span>
+                </div>
+            </section>
+            <section class="card">
+                <h2>Lista de vehículos</h2>
+                <ul id="lista"></ul>
+            </section>
+            <footer>
+                © 2026 Concesionario | Estudiante Web 🚗
+            </footer>
+        </div>
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
