@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif
+}
+
+body {
+    background: #f4f6f8
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px
+}
+
+.sidebar-header,
+.frase {
+    text-align: center
+}
+
+.logo {
+    font-size: 40px
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px
+}
+
+.menu button {
+    padding: 10px;
+    border: 0;
+    background: #334155;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+.menu button:hover,
+.menu .activo {
+    background: #2563eb
+}
+
+.frase {
+    font-size: 13px;
+    opacity: .8
+}
+
+/* CONTENIDO */
+.contenido {
+    flex: 1;
+    padding: 30px
+}
+
+.container,
+.card {
+    margin-bottom: 20px
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px
+}
+
+/* FORM */
+.form {
+    display: grid;
+    gap: 15px
+}
+
+.campo {
+    display: flex;
+    flex-direction: column
+}
+
+input,
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px
+}
+
+.form button {
+    background: #2563eb;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+/* FILTROS */
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.filtros button {
+    margin-right: 5px;
+    padding: 8px 12px;
+    border: 0;
+    background: #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer
+}
+
+.contador span {
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+    text-align: center
+}
+
+/* LISTA */
+#lista {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+#lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px
+}
+
+#lista li span {
+    font-weight: 600;
+    color: #1e293b
+}
+
+/* ESTADOS */
+.estado {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600
+}
+
+.estado.disponible {
+    background: #dcfce7;
+    color: #166534
+}
+
+.estado.vendido {
+    background: #fee2e2;
+    color: #991b1b
+}
+
+/* ICONOS */
+#lista li .icono,
+#lista li i,
+#lista li button {
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 10px
+}
+
+#lista li .icono:hover,
+#lista li i:hover,
+#lista li button:hover {
+    transform: scale(1.2);
+    transition: .2s
+}
+
+/* PRIORIDAD / FECHA */
+.prioridad,
+.fecha {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 6px
+}
+
+.prioridad {
+    background: #e0f2fe;
+    color: #0369a1
+}
+
+.fecha {
+    background: #f1f5f9;
+    color: #475569
+}
+
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #f1f5f9;
+    color: #475569;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 14px;
+    border-top: 1px solid #e5e7eb;
+    z-index: 100
+}
+
+/* MENU TOGGLE */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 26px;
+    background: #2563eb;
+    color: #fff;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1000
+}
+
+@media(max-width:1024px) {
+    .layout {
+        flex-direction: column
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 260px;
+        transition: .3s;
+        z-index: 999
+    }
+
+    .sidebar.activo {
+        left: 0
+    }
+
+    .menu-toggle {
+        display: block
+    }
+
+    .contenido {
+        padding-top: 70px
+    }
+}
+
+@media(max-width:767px) {
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px
+    }
+
+    .filtros>div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 8px
+    }
+
+    .filtros button {
+        width: 100%
+    }
+
+    .contador {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 8px
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 10px
+    }
+}
+
+@media(min-width:768px) and (max-width:1024px) {
+    .card.filtros {
+        display: block !important
+    }
+
+    .nombresss,
+    .contador {
+        display: flex;
+        gap: 10px
+    }
+
+    .nombresss {
+        margin-bottom: 10px
+    }
+    .nombresss button,
+    .contador span {
+        flex: 1;
+        white-space: nowrap
+    }
+}
